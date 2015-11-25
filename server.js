@@ -9,8 +9,6 @@ var session      = require('express-session');
 var passport     = require('passport');
 var locus        = require('locus');
 
-// Load environment variables
-require('dotenv').load();
 
 // Connect to MongoDB
 require('./config/database');

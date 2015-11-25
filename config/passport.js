@@ -3,12 +3,14 @@ var HungryPerson = require('../models/hungryperson');
 var TruckOwner = require('../models/truckowner');
 var globals = require('./globals');
 
+var env = require('./environment');
+
 module.exports = function(passport) {
 
   passport.use(new FacebookStrategy({
-      clientID: process.env.FACEBOOK_APP_ID,
-      clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: process.env.FB_CB_URL,
+      clientID:     env.FACEBOOK_APP_ID,
+      clientSecret: env.FACEBOOK_APP_SECRET,
+      callbackURL:  env.FB_OAUTH_CB,
       profileFields: ['id', 'displayName', 'photos', 'email'],
       enableProof: true
     },
